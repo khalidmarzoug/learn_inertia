@@ -8775,7 +8775,7 @@ instanceKlass com/intellij/ui/WindowRoundedCornersManager
 instanceKlass com/intellij/ui/dsl/builder/VerticalComponentGap
 instanceKlass com/intellij/ide/ui/laf/darcula/ui/TextFieldWithPopupHandlerUI$ClearExtension
 instanceKlass com/intellij/ide/ui/laf/darcula/ui/TextFieldWithPopupHandlerUI$IconHolder
-instanceKlass com/intellij/ide/ui/laf/darcula/ui/TextFieldWithPopupHandlerUI$SearchExtensinn
+instanceKlass com/intellij/ide/ui/laf/darcula/ui/TextFieldWithPopupHandlerUI$SearchExtension
 instanceKlass com/intellij/ui/components/TextComponentEmptyText$1
 instanceKlass com/intellij/ui/DocumentAdapter
 instanceKlass javax/swing/event/UndoableEditListener
