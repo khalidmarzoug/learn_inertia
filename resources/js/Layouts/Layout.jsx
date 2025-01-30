@@ -1,14 +1,17 @@
 import { Link } from "@inertiajs/react";
+import { useRoute } from "../../../vendor/tightenco/ziggy";
 
 export default function Layout({ children }) {
+    const route = useRoute();
+
     return (
         <>
             <header>
                 <nav>
-                    <Link className="nav-link" href="/">
+                    <Link className="nav-link" href={ route('home') } >
                         Home
                     </Link>
-                    <Link className="nav-link" href="/posts/create">
+                    <Link className="nav-link" href={route('posts.create')}>
                         Create
                     </Link>
                 </nav>

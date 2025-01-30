@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePostRequest;
-use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -34,13 +32,12 @@ class PostController extends Controller
         sleep(2);
 
         $fields = $request->validate([
-            'body' => ['required', 'min:10'],
+            'body' => ['required']
         ]);
 
         Post::create($fields);
 
         return redirect('/');
-
     }
 
     /**
@@ -48,7 +45,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return inertia('Show', ['post' => $post]);
     }
 
     /**
@@ -56,7 +53,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return inertia("Edit", ['post' => $post]);
     }
 
     /**
@@ -64,7 +61,18 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        sleep(1);
+
+        $fields = $request->validate([
+            'body' => ['required']
+        ]);
+
+        $post->update($fields);
+
+        return redirect('/')->with(
+            'success',
+            'The post was updated successfully.'
+        );
     }
 
     /**
@@ -72,6 +80,11 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect('/')->with(
+            'message',
+            'The post was deleted!'
+        );
     }
 }
